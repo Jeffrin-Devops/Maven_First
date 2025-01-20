@@ -26,5 +26,7 @@ pipeline{
                 sh 'mvn -s settings.xml clean deploy'
             }
         }
+    }
+}
 
  
