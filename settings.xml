@@ -5,12 +5,12 @@
 
   <servers>
     <server>
-      <id>java-maven-war-app-snapshot</id>
+      <id>Maven_First-snapshot</id>
       <username>admin</username>
       <password>Jeffrin.aws@55</password>
     </server>
     <server>
-      <id>java-maven-war-app-releases</id>
+      <id>Maven_First-releases</id>
       <username>admin</username>
       <password>Jeffrin.aws@55</password>
     </server>
