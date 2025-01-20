@@ -31,18 +31,18 @@
 	</build>
  <repositories>
     <repository>
-      <id>java-maven-war-app-group</id>
+      <id>Maven_First</id>
       <url>http://13.235.74.88:8081/repository/Maven_First-group/</url>
     </repository>
   </repositories>
 
     <distributionManagement>
     <snapshotRepository>
-      <id>java-maven-war-app-snapshot</id>
+      <id>Maven_First-snapshot</id>
       <url>http://13.235.74.88:8081/repository/Maven_First-snapshot/</url>
     </snapshotRepository>
     <repository>
-      <id>java-maven-war-app-releases</id>
+      <id>Maven_First-releases</id>
       <url>http://13.235.74.88:8081/repository/Maven_First-releases/</url>
     </repository>
   </distributionManagement>
