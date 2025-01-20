@@ -1,7 +1,5 @@
 pipeline{
-    agent{
-        label 'jenkins_agent'
-    }
+    agent any
 
     tools {
         maven 'Maven_3.9.6'
@@ -10,7 +8,7 @@ pipeline{
     stages{
         stage('SCM Checkout'){
             steps{
-                checkout changelog: false, poll: false, scm: scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Jeffrin-Devops/Maven_First.git']])
+                git branch: 'main', credentialsId: '96cccbac-8475-497a-b92a-fd551fac8eee', url: 'https://github.com/Jeffrin-Devops/Maven_First.git'
             }
 
         }
