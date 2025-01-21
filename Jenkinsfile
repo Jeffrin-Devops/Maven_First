@@ -32,7 +32,7 @@ pipeline{
 
          stage('deployment'){
             steps{
-                sh '/home/ec2-user/tomcat/ansible-playbook app.yml -e "build=${BUILD_NUMBER}"'
+                sh 'ansible-playbook app.yml -e "build=${BUILD_NUMBER}"'
             }
         }
     }
