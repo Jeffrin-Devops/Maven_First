@@ -1,49 +1,49 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.mycompany.app</groupId>
-	<artifactId>hello-world-war</artifactId>
-	<version>2.5.0-${env.BUILD_NUMBER}</version>
-	<packaging>war</packaging>
-	<name>Hello World Web Application Repository</name>
-	<description>Simplest possible Java Webapp</description>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>hello-world-war</artifactId>
+    <version>2.5.0-${env.BUILD_NUMBER}</version>
+    <packaging>war</packaging>
+    <name>Hello World Web Application Repository</name>
+    <description>Simplest possible Java Webapp</description>
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>8.1.5.v20120716</version>
-				<configuration>
-					<scanIntervalSeconds>0</scanIntervalSeconds>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.2.3</version>
-			</plugin>
-		</plugins>
-	</build>
- <repositories>
-    <repository>
-      <id>Maven_First</id>
-      <url>http://13.235.74.88:8081/repository/Maven_First-group/</url>
-    </repository>
-  </repositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>8.1.5.v20120716</version>
+                <configuration>
+                    <scanIntervalSeconds>0</scanIntervalSeconds>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.3</version>
+            </plugin>
+        </plugins>
+    </build>
+    <repositories>
+        <repository>
+            <id>Maven_First</id>
+            <url>http://13.232.252.51:8081/repository/Maven_First-group/</url>
+        </repository>
+    </repositories>
 
     <distributionManagement>
-    <snapshotRepository>
-      <id>Maven_First-snapshot</id>
-      <url>http://13.235.74.88:8081/repository/Maven_First-snapshot/</url>
-    </snapshotRepository>
-    <repository>
-      <id>Maven_First-releases</id>
-      <url>http://13.235.74.88:8081/repository/Maven_First-releases/</url>
-    </repository>
-  </distributionManagement>
+        <snapshotRepository>
+            <id>Maven_First-snapshot</id>
+            <url>http://13.232.252.51:8081/repository/Maven_First-snapshot/</url>
+        </snapshotRepository>
+        <repository>
+            <id>Maven_First-releases</id>
+            <url>http://13.232.252.51:8081/repository/Maven_First-releases/</url>
+        </repository>
+    </distributionManagement>
 </project>
