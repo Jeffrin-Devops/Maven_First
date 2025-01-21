@@ -1,5 +1,7 @@
 pipeline{
-    agent Ansible_agent
+    agent {
+        label 'Ansible_agent'
+    }
 
  
 
