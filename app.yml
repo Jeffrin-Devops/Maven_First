@@ -10,7 +10,7 @@
     group: "com/mycompany/app"
     app: "hello-world-war"
     version: "2.5.0"
-    build: "{{jenkins_build_number}}"
+    build: "{{build}}"
 
   tasks:
     - name: get the url
