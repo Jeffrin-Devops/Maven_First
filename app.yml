@@ -1,0 +1,30 @@
+  ---
+- name: First Playbook
+  hosts: all
+  become: true
+  gather_facts: false
+
+  vars:
+    nex: "http://13.235.74.88:8081/repository"
+    type: "Maven_First-releases"
+    group: "com/mycompany/app"
+    app: "hello-world-war"
+    version: "2.5.0"
+    build: "{{jenkins_build_number}}"
+
+  tasks:
+
+     - name: get the url
+       get_url:
+         url: "{{nex}}/{{type}}/{{group}}/{{app}}/{{version}}-{{build}}.war"
+         dest: /home/ec2-user
+         mode:  '777'
+
+     - name: rename the file
+       shell: "mv /home/ec2-user/{{app}}/{{version}}-{{build}}.war /home/ec2-user/app1.war"
+
+     - name: move the file to tomcat
+       shell: "cp /home/ec2-user/app1.war /home/ec2-user/apache-tomcat-9.0.98/webapps"
+
+     - name: remove the artifacts
+       shell: "rm -rf /home/ec3-user/app1.war"
