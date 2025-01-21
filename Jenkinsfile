@@ -2,6 +2,9 @@ pipeline{
     agent {
         label 'Ansible_agent'
     }
+     tools {
+        maven 'Maven_3.9'
+     }
 
  
 
