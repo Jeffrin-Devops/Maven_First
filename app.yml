@@ -1,4 +1,4 @@
-  ---
+---
 - name: First Playbook
   hosts: all
   become: true
@@ -13,18 +13,17 @@
     build: "{{jenkins_build_number}}"
 
   tasks:
+    - name: get the url
+      get_url:
+        url: "{{nex}}/{{type}}/{{group}}/{{app}}/{{version}}-{{build}}.war"
+        dest: /home/ec2-user
+        mode: "777"
 
-     - name: get the url
-       get_url:
-         url: "{{nex}}/{{type}}/{{group}}/{{app}}/{{version}}-{{build}}.war"
-         dest: /home/ec2-user
-         mode:  '777'
+    - name: rename the file
+      shell: "mv /home/ec2-user/{{app}}/{{version}}-{{build}}.war /home/ec2-user/app1.war"
 
-     - name: rename the file
-       shell: "mv /home/ec2-user/{{app}}/{{version}}-{{build}}.war /home/ec2-user/app1.war"
+    - name: move the file to tomcat
+      shell: "cp /home/ec2-user/app1.war /home/ec2-user/apache-tomcat-9.0.98/webapps"
 
-     - name: move the file to tomcat
-       shell: "cp /home/ec2-user/app1.war /home/ec2-user/apache-tomcat-9.0.98/webapps"
-
-     - name: remove the artifacts
-       shell: "rm -rf /home/ec3-user/app1.war"
+    - name: remove the artifacts
+      shell: "rm -rf /home/ec3-user/app1.war"

@@ -32,8 +32,7 @@ pipeline{
 
          stage('deployment'){
             steps{
-                sh 'pwd'
-                sh 'ls -al' 
+
                 sh 'ansible-playbook app.yml -e "build=${BUILD_NUMBER}"'
             }
         }
